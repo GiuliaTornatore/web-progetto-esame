@@ -1,0 +1,383 @@
+
+
+
+
+
+
+
+
+
+/* Frame della sezione */
+.frame-container {
+    display: flex;
+    flex-direction: row; /* Assicura l'affiancamento orizzontale */
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 50px auto;
+    gap: 40px;
+    flex-wrap: nowrap; /* Evita che vadano su una nuova riga */
+}
+
+/* Layout principale */
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Contenuto principale più largo, sidebar più stretta */
+    gap: 140px;
+    max-width: 100%;
+    margin: auto;
+}
+
+/* Testo principale */
+.main-content {
+    max-width: 100%;
+}
+
+
+
+
+/* ✅ Media Query per la modalità responsive */
+@media screen and (max-width: 1024px) {
+    
+    /* La sidebar scompare */
+    .sidebar, .sidebar .list, .tendenze, .consigliStile {
+        display: none !important;
+    }
+
+    /* Il container diventa a colonna e la main-content si adatta */
+    .frame-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Cambia da row a column */
+        align-items: center; /* Centra il contenuto */
+        gap: 20px; /* Riduce il gap */
+    }
+
+    /* La main-content diventa larga quanto il carosello */
+    .main-content {
+        width: 100%;
+        max-width: 800px; /* Imposta la stessa larghezza massima del carosello */
+        padding: 0 20px; /* Aggiunge un po' di margine laterale */
+    }
+
+    .container{
+        display: flex;
+    }
+
+    .card-container {
+        display: flex !important;
+        width: 100%;
+        flex-direction: column;
+        padding: 10px;
+        border-left: 3px solid #333; /* 🔹 Bordo a sinistra */
+        border-right: 3px solid #333; /* 🔹 Bordo a destra */
+    }
+    
+    /* Stile delle Card */
+    .card {
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 0px !important; /* 🔹 Rende i bordi squadrati */
+    }
+
+    .card-2 {
+        background-color: #5E7A7C;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 0px; /* 🔹 Rende i bordi squadrati */
+    }
+    
+
+    
+    
+    /* Contenuto della Card */
+    .card-content {
+        padding: 20px;
+    }
+     /* Contenuto della Card */
+     .card-content-2 {
+        padding: 20px;
+    }
+    
+    .card-content h2 {
+        margin: 0 0 10px;
+        font-size: 1.5rem;
+        color: #333;
+    }
+    
+    .card-content p {
+        margin: 0 0 15px;
+        color: #666;
+        font-size: 1rem;
+    }
+
+    
+
+    .card-2 .card-content p{
+        margin: 0 0 15px;
+        color: #000000;
+        font-size: 1rem;
+    }
+
+
+
+}
+
+
+
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-left: 120px; /* Sposta la sidebar più a destra */
+
+}
+
+    /* Lista Ambiente e Stile */
+    .list {
+        display: flex;
+        justify-content: flex-start;
+        gap: 50px; /* Imposta uno spazio controllato tra gli elementi */
+
+    }
+
+    .list-item {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    
+    .list-item a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        display: inline-block;
+        position: relative;
+    }
+    
+    .list-item a::after {
+        content: "";
+        display: block;
+        width: 100%; /* Si adatta alla larghezza del testo */
+        height: 2px;    
+        background-color: transparent; /* Inizialmente trasparente */
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    .list-item a:hover {
+        color: #5E7A7C;
+    }
+    
+    .list-item a:hover::after {
+        background-color: #5E7A7C; /* Cambia colore al passaggio del mouse */
+    }
+
+/* Box "Tendenze" */
+.tendenze {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-left: 5px solid #2c4e48; /* Verde scuro */
+    border-radius: 5px;
+}
+
+.tendenze h3 {
+    color: #2c4e48;
+    margin-bottom: 10px;
+}
+
+/* Box "Consigli di stile" */
+.consigliStile {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-left: 5px solid #2c4e48; /* Verde scuro */
+    border-radius: 5px;
+}
+
+.consigliStile h3 {
+    color: #2c4e48;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.card-container{
+    display: none;
+}
+/* Sezione principale */
+.altri-ambienti {
+    max-width: 100%;
+    margin:  auto;
+    padding: 20px;
+    background-color: rgb(189, 189, 189);
+    border-radius: 0px; /* Nessun arrotondamento (bordi squadrati) */
+
+}
+
+
+
+image-container {
+    display: flex;
+    justify-content: center; /* Centra le immagini */
+    gap: 20px; /* Spazio tra le immagini */
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+}
+
+.image {
+    width: 45%; /* Ogni immagine occupa il 45% dello spazio disponibile */
+    height: auto; /* Mantiene le proporzioni */
+    object-fit: cover; /* Ritaglia l'immagine per adattarla */
+    border-radius: 5px; /* Opzionale: angoli arrotondati */
+}
+
+
+/* Titolo della sezione */
+.altri-ambienti h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Contenitore griglia */
+.ambienti-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+
+}
+
+/* Card singola */
+.ambiente-card {
+    position: relative;
+    width: 30%; /* Adatta alla larghezza disponibile */
+    overflow: hidden;
+}
+
+/* Immagine */
+.ambiente-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Info e freccia */
+.ambiente-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Stile per il link freccia */
+.arrow-link {
+    text-decoration: none;
+    color: #777;
+    font-size: 1.9rem;
+}
+
+.arrow-link:hover {
+    color: #5E7A7C;
+}
+
+/* Stili generali per il footer */
+.footer {
+    background-color: #000000;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.logo-small {
+    width: 60px; /* Imposta una dimensione più piccola */
+    height: auto;
+    vertical-align: middle; /* Allinea l'immagine con il testo */
+    margin-right: 8px;
+    margin-bottom: 8%
+}
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 0;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #302b2b;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-bottom ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.footer-bottom ul li {
+    margin: 0 10px;
+}
+
+.footer-bottom ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.footer-bottom ul li a:hover {
+    color: #ffffff;
+}
+
+
+
+
+
+

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/salottoModigliani.css ">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>GGM Design</title>
+
+
+    <style>
+        .slider-container {
+            position: relative;
+            max-width: 1100px;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            transition: opacity 0.5s ease-in-out;
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0);
+            /* Alpha a 0 rende il colore invisibile */
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+
+            font-size: 1.5rem;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header con logo e menù -->
+    <header class="bg-black bg-opacity-50 py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <img src="path-to-logo.png" alt="LOGO" class="img-fluid" style="height: 50px;">
+            </div>
+            <ul class="d-flex align-items-center m-0 list-unstyled">
+                <li class="mx-3 dropdown">
+                    <a href="#" class="text-decoration-none text-white dropdown-toggle"
+                        data-bs-toggle="dropdown">Ambienti</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Cucina</a></li>
+                        <li><a class="dropdown-item" href="#">Salotto</a></li>
+                        <li><a class="dropdown-item" href="#">Sala da pranzo</a></li>
+                        <li><a class="dropdown-item" href="#">Camera da letto</a></li>
+                        <li><a class="dropdown-item" href="#">Cameretta</a></li>
+                        <li><a class="dropdown-item" href="#">Bagno</a></li>
+                    </ul>
+                </li>
+                <li class="mx-3 dropdown">
+                    <a href="#" class="text-decoration-none text-white dropdown-toggle"
+                        data-bs-toggle="dropdown">Stili</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Stile classico</a></li>
+                        <li><a class="dropdown-item" href="#">Stile minimal</a></li>
+                        <li><a class="dropdown-item" href="#">Stile industriale</a></li>
+                        <li><a class="dropdown-item" href="#">Stile contemporaneo</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Titolo della pagina -->
+    <section class="stile-header">
+        <header class="bg-black bg-opacity-50 py-3">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="container">
+                    <h1>Salotto Modigliani</h1>
+                </div>
+    </section>
+
+    <!-- Carousello di immagini e testo-->
+    <div class="slider-container">
+        <!-- Molliche di pane -->
+        <p><a href="#">Ambienti</a> / Salotto / <strong>Salotto Modigliani</strong></p>
+
+        <div class="slider">
+            <div class="slide active">
+                <img src="../img/CAROSELLI/salotto-classico.jpeg" alt="Immagine 1">
+            </div>
+            <div class="slide">
+                <img src="../img/CAROSELLI/saladapranzo-contemporanea.jpeg" alt="Immagine 2">
+            </div>
+            <div class="slide">
+                <img src="../img/CAROSELLI/salotto-classico.jpeg" alt="Immagine 3">
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function moveSlide(n) {
+            slides[currentIndex].classList.remove("active");
+            currentIndex = (currentIndex + n + slides.length) % slides.length;
+            slides[currentIndex].classList.add("active");
+        }
+    </script>
+
+
+    <!-- Sezione del Salotto Modigliani -->
+    <section class="frame-container">
+        <div class="container">
+            <!-- Sezione principale -->
+            <div class="main-content">
+                <h1>Salotto Modigliani</h1>
+                <p>
+                    Un perfetto equilibrio tra modernità, eleganza e funzionalità. Il pavimento in legno con venature
+                    marcate dona calore e carattere all'ambiente, creando una base accogliente per tutto l'arredo.
+                    I toni neutri e sobri dominano la stanza, con il bianco delle pareti e delle librerie.
+                </p>
+                <p>
+                    La libreria su misura è uno degli elementi centrali della stanza, con un design raffinato e
+                    ordinato, ospita una vasta collezione di libri e oggetti decorativi; questo non solo ottimizza lo
+                    spazio,
+                    ma aggiunge anche personalità, riflettendo i gusti e gli interessi dei proprietari.
+                </p>
+                <p>
+                    La parete attrezzata è progettata con linee pulite, alternando vani chiusi e vetrine, permette di
+                    mantenere un equilibrio tra estetica e praticità. Il grande televisore è il fulcro visivo di questa
+                    parete,
+                    completando la funzionalità del soggiorno.
+                </p>
+                <p>
+                    Il soggiorno trasmette un senso di ordine, eleganza e calore. È uno spazio studiato nei minimi
+                    dettagli, ideale sia per momenti di relax personale che per accogliere ospiti in un'atmosfera
+                    piacevole e raffinata.
+                </p>
+                <img src="../img/CAROSELLI/bagno-classico.jpeg" class="d-block w-100" alt="Bagno ciliegio">
+
+
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Lista Ambiente e Stile -->
+                <div class="list">
+                    <div class="list-item">
+                        <span>Ambiente</span>
+                        <a class="list-link" href="#">Salotto</a>
+                    </div>
+                    <div class="list-item">
+                        <span>Stile</span>
+                        <a class="list-link" href="#">Classico</a>
+                    </div>
+                </div>
+
+                <!-- Box "Tendenze" -->
+                <div class="tendenze">
+                    <h3>Tendenze</h3>
+                    <p>
+                        Con l’evoluzione del design e delle tecnologie, lo stile classico è diventato sempre più
+                        versatile, integrando elementi moderni pur mantenendo il suo fascino senza tempo.
+                    </p>
+                    <p>
+                        Oggi troviamo spesso cucine classiche con materiali di alta qualità, colori neutri e dettagli
+                        sofisticati, che si adattano perfettamente anche agli ambienti più contemporanei.
+                    </p>
+                </div>
+
+                <!-- Box "Consigli di stile" -->
+                <div class="consigliStile">
+                    <h3>Consigli di stile</h3>
+                    <p>
+                        Protagonisti delle composizioni classiche sono i colori pastello. Beige, cipria, verde, giallo e
+                        arancione
+                        chiaro, sono i colori predominanti di questo stile. </p>
+                    <p>
+                        Si può osare con abbinamenti di colori più accesi come bianco e nero o bianco e verde che
+                        regalano un tocco
+                        vintage.
+                    </p>
+                    <p>
+                        Il bianco è sicuramente la tonalità perfetta per cucine classiche con superfici in legno
+                        naturale. </p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+
+    <div class="card-container">
+        <!-- Prima Card -->
+        <div class="card">
+            <div class="card-content">
+                <h2>Tendenze</h2>
+                <p>
+                    Con l’evoluzione del design e delle tecnologie, lo stile classico è diventato sempre più versatile,
+                    integrando elementi moderni pur mantenendo il suo fascino senza tempo.
+                    Oggi troviamo spesso cucine classiche con materiali di alta qualità, colori neutri e dettagli
+                    sofisticati, che si adattano perfettamente anche agli ambienti più contemporanei.
+                </p>
+            </div>
+        </div>
+
+        <!-- Seconda Card -->
+        <div class="card-2">
+            <div class="card-content-2">
+                <h2>Consigli di stile</h2>
+                <p class="color-p">
+                    Protagonisti delle composizioni classiche sono i colori pastello. Beige, cipria, verde, giallo e
+                    arancione
+                    chiaro, sono i colori predominanti di questo stile.
+                    Si può osare con abbinamenti di colori più accesi come bianco e nero o bianco e verde che regalano
+                    un tocco
+                    vintage.
+                    Il bianco è sicuramente la tonalità perfetta per cucine classiche con superfici in legno naturale.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Sezione Altri Ambienti -->
+    <section class="altri-ambienti">
+        <h2>Altri ambienti in stile classico</h2>
+        <div class="ambienti-container">
+
+            <!-- Card 1: Cucina Provenza -->
+            <div class="ambiente-card">
+                <img src="../img/HOME PAGE IMM/cucina-provenza.jpeg" alt="Cucina Provenza">
+                <div class="ambiente-info">
+                    <span>Cucina Provenza</span>
+                    <a href="#" class="arrow-link">→</a>
+                </div>
+            </div>
+
+            <!-- Card 2: Bagno Ciliegio -->
+            <div class="ambiente-card">
+                <img src="../img/HOME PAGE IMM/bagno-minimal.jpeg" alt="Bagno Ciliegio">
+                <div class="ambiente-info">
+                    <span>Bagno ciliegio</span>
+                    <a href="#" class="arrow-link">→</a>
+                </div>
+            </div>
+
+            <!-- Card 3: Cameretta Camilla -->
+            <div class="ambiente-card">
+                <img src="../img/HOME PAGE IMM/icona-stile-classico.png" alt="Cameretta Camilla">
+                <div class="ambiente-info">
+                    <span>Cameretta Camilla</span>
+                    <a href="#" class="arrow-link">→</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Sezione Spazi Belli -->
+            <div class="footer-section">
+                <img src="../img/logo.png" class="logo-small">
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Condizioni</a></li>
+                </ul>
+            </div>
+            <!-- Sezione Esplora -->
+            <div class="footer-section">
+                <h4>GGM Design</h4>
+                <ul>
+                    <li><a href="#">Chi siamo</a></li>
+                
+                </ul>
+            </div>
+            <!-- Sezione Per i professionisti -->
+            <div class="footer-section">
+                <h4>Ambienti</h4>
+                <ul>
+                    <li><a href="#">Cucina</a></li>
+                    <li><a href="#">Soggiorno</a></li>
+                    <li><a href="#">Sala da pranzo</a></li>
+                    <li><a href="#">Camera da letto</a></li>
+                    <li><a href="#">Cameretta</a></li>
+                    <li><a href="#">Bagno</a></li>
+
+
+                </ul>
+            </div>
+            <!-- Sezione Per i brand -->
+            <div class="footer-section">
+                <h4>Stili</h4>
+                <ul>
+                    
+                    <li><a href="#">Stile classico</a></li>
+                    <li><a href="#">Stile contemporaneo</a></li>
+                    <li><a href="#">Stile minimal</a></li>
+                    <li><a href="#">Stile industriale</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GGM Design</p>
+            <ul>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">TikTok</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
