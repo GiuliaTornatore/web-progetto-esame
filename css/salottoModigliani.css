@@ -179,26 +179,36 @@
 /* Box "Tendenze" */
 .tendenze {
     background-color: #f5f5f5;
-    padding: 20px;
+    padding: 25px; /* Aumentato il padding per migliorare la leggibilità */
     border-left: 5px solid #2c4e48; /* Verde scuro */
     border-radius: 5px;
+    width: 120%; /* Allargato per occupare meglio lo spazio disponibile */
+    font-size: 14px; /* Ridotto il font per una lettura più fluida */
+    line-height: 1.6; /* Aumentata l’interlinea per una lettura più fluida */
+    margin-left: -40px; /* Sposta leggermente verso sinistra */
 }
 
 .tendenze h3 {
     color: #2c4e48;
+    font-size: 20px; /* Leggermente ridotto per armonizzare */
     margin-bottom: 10px;
 }
 
 /* Box "Consigli di stile" */
 .consigliStile {
     background-color: #f5f5f5;
-    padding: 20px;
+    padding: 25px; /* Aumentato il padding per migliorare la leggibilità */
     border-left: 5px solid #2c4e48; /* Verde scuro */
     border-radius: 5px;
+    width: 120%; /* Allargato per occupare meglio lo spazio disponibile */
+    font-size: 14px; /* Ridotto il font per una lettura più fluida */
+    line-height: 1.6; /* Aumentata l’interlinea per una lettura più fluida */
+    margin-left: -40px; /* Sposta leggermente verso sinistra */
 }
 
 .consigliStile h3 {
     color: #2c4e48;
+    font-size: 20px; /* Leggermente ridotto per armonizzare */
     margin-bottom: 10px;
 }
 
@@ -226,6 +236,30 @@ image-container {
     justify-content: center; /* Centra le immagini */
     gap: 20px; /* Spazio tra le immagini */
     width: 100%; /* Occupa tutta la larghezza disponibile */
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Due colonne */
+    gap: 10px;
+    padding: 20px;
+    max-width: 1350px; /* Imposta una larghezza massima per evitare che si allarghi troppo */
+    margin: auto; /* Centra la gallery nella pagina */
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 2%;
+    object-fit: cover; /* Mantiene le proporzioni corrette */
+}
+
+/* Prima e ultima immagine a tutta larghezza */
+.gallery img:first-child,
+.gallery img:last-child {
+    grid-column: span 2; /* Mantiene l'occupazione della larghezza completa */
+    height: auto; /* Rimuove l'altezza fissa */
+    max-height: 400px; /* Imposta un limite massimo */
+    object-fit: cover;
 }
 
 .image {
@@ -377,6 +411,17 @@ image-container {
 }
 
 
+@media screen and (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr); /* Una sola colonna su schermi piccoli */
+    }
+
+.gallery img:first-child,
+.gallery img:last-child {
+    grid-column: span 1; /* Evita che si allarghino troppo */
+    height: 500px;
+}
+}
 
 
 

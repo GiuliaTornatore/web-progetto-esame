@@ -54,6 +54,67 @@
     color: white;
 }
 
+/* Stile Generale della Sezione */
+.guida-ambienti {
+    max-width: 1200px;
+    margin: 50px auto;
+    font-family: Arial, sans-serif;
+    text-align: left; /* Mantiene l'allineamento a sinistra */
+}
+
+/* Titolo */
+.guida-ambienti h3 {
+    font-size: 2rem; /* Dimensione grande su desktop */
+    color: #2c4e48;
+    margin-bottom: 15px;
+}
+
+/* Testo */
+.guida-ambienti p {
+    font-size: 1.2rem; /* Testo leggibile su desktop */
+    color: #333;
+    line-height: 1.6; /* Migliora la leggibilità */
+}
+
+/* ✅ Responsive: Ridimensionamento per Tablet */
+@media screen and (max-width: 1024px) {
+    .guida-ambienti h3 {
+        font-size: 1.7rem; /* Titolo leggermente più piccolo */
+    }
+
+    .guida-ambienti p {
+        font-size: 1rem; /* Testo più compatto */
+    }
+}
+
+/* ✅ Responsive: Ridimensionamento per Mobile */
+@media screen and (max-width: 768px) {
+    .guida-ambienti {
+        padding: 10px; /* Riduce il padding per ottimizzare lo spazio */
+    }
+
+    .guida-ambienti h3 {
+        font-size: 1.5rem; /* Titolo più piccolo */
+    }
+
+    .guida-ambienti p {
+        font-size: 0.9rem; /* Testo ridotto per leggibilità su schermi piccoli */
+    }
+}
+
+/* ✅ Responsive: Adattamento per Schermi Molto Piccoli */
+@media screen and (max-width: 480px) {
+    .guida-ambienti h3 {
+        font-size: 1.3rem; /* Titolo più piccolo */
+    }
+
+    .guida-ambienti p {
+        font-size: 0.8rem; /* Testo molto compatto */
+    }
+}
+
+
+
 /* Responsive */
 @media (max-width: 768px) {
     .footer .container {
@@ -180,8 +241,42 @@
     background-color: #3d5354; /* Giallo più scuro */
 }
 
+@media screen and (max-width: 768px) {
+    .ambienti {
+        padding: 10px;
+    }
 
+    .card-ambiente {
+        flex-direction: column;
+        text-align: left;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
+    .img-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .ambiente-info {
+        width: 100%;
+        padding: 8px;
+        text-align: left; /* 🔹 Mantiene il testo completamente allineato a sinistra */
+    }
+
+    .ambiente-info h3 {
+        font-size: 1.2rem; /* 🔹 Titolo ridotto */
+    }
+
+    .ambiente-info p {
+        font-size: 0.9rem; /* 🔹 Testo ancora più piccolo */
+    }
+
+    .btn-progetto {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+        margin-top: 5px;
+    }
+}
 
 /* .ambienti-evidenza{
     height: 200px;
